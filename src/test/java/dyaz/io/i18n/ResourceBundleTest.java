@@ -38,4 +38,16 @@ public class ResourceBundleTest {
     System.out.println(resourceBundle.getString("goodbye"));
 
   }
+
+  @Test
+  void testResourceBundleMultipleTImes() {
+
+    var amerika = new Locale("en", "US");
+
+    var resourceBundle1 = ResourceBundle.getBundle("message", amerika);
+    var resourceBundle2 = ResourceBundle.getBundle("message", amerika);
+
+    System.out.println(resourceBundle1 == resourceBundle2);
+
+  }
 }
